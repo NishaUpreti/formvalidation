@@ -1,0 +1,85 @@
+<div class="limiter">
+  <div class="container-login100">
+    <div class="wrap-login100">
+      <div class="login100-form-title" style="background-image: url(assets/images/bg-01.jpg);">
+        <span class="login100-form-title-1">
+          Register
+        </span>
+      </div>
+      <form class="login100-form validate-form" #userform="ngForm">
+        <div class="wrap-input100 validate-input m-b-26">
+          <div class="form-group">
+            <span class="label-input100">Username</span>
+            <input class="input100" [(ngModel)]="username" required name="username1" #un="ngModel" type="text"
+              placeholder="Enter username" maxlength="6" minlength="3">
+
+
+            <div *ngIf="un.invalid && (un.touched || un.dirty)" class="alert alert-danger">
+              <div *ngIf="un.errors.required">
+                Username is required
+              </div>
+              <div *ngIf="un.errors.minlength">
+                Minimum 3 characters is required
+              </div>
+              <div *ngIf="un.errors.maxlength">
+                Maximum 8 characters is required
+              </div>
+            </div>
+          </div>
+          <!-- <div [hidden]="un.valid || un.pristine" class="alert alert-danger">
+            Username is required
+          </div> -->
+
+        </div>
+        <div class="wrap-input100 validate-input m-b-18">
+          <span class="label-input100">Mobile Number</span>
+          <input class="input100" type="mobile" [(ngModel)]="mobileno" minlength="10" maxlength="10" required
+            #mno="ngModel" name="mobileno1" placeholder="Enter Mobile Number" pattern="[6-9]">
+          <div *ngIf="mno.invalid && (mno.touched || mno.dirty)" class="alert alert-danger">
+            <span *ngIf="mno.errors?.required">Mobile Number is required</span>
+            <span *ngIf="mno.errors?.pattern">Mobile No. must be strat with 6-9 number</span>
+          </div>
+        </div>
+        <div class="wrap-input100 validate-input m-b-18">
+          <span class="label-input100">Email</span>
+          <input class="input100" type="Email" [(ngModel)]="email" name="email1"
+            pattern="^[a-zA-Z0–9_.+-]+@[a-zA-Z0–9-]+.[a-zA-Z0–9-.]+$" required #mail="ngModel"
+            placeholder="Enter Email">
+          <div [hidden]="mail.errors?.required || mail.pristine" class="alert alert-danger">
+            Email is required and format should be <i>abc@gmail.com</i>
+          </div>
+        </div>
+        <div class="wrap-input100 validate-input m-b-18">
+          <span class="label-input100">Password</span>
+          <input class="input100" type="text" [(ngModel)]="pasd" maxlength="8" name="password1" required #psd="ngModel"
+            placeholder="Enter password" pattern="^[a-zA-Z0-9@$%?]{8,}$">
+          <div *ngIf="psd.invalid && (psd.dirty || psd.touched)" class="alert alert-danger">
+            <span class="text-danger" *ngIf="psd.errors?.required">
+              Password is required
+            </span>
+            <span *ngIf="psd.errors?.maxlength">Password must be 8 characters long.</span>
+            <span *ngIf="psd.errors?.pattern">Password should have 1 Uppercase 1 Lowercase 1 Special Character 1
+              Number.</span>
+          </div>
+
+        </div>
+        <div class="wrap-input100 validate-input m-b-18">
+          <span class="label-input100">Confirm Password</span>
+          <input class="input100" type="text" pattern="{{psd.value}}" [(ngModel)]="cpsd" name="cpassword" required
+            #cp="ngModel" placeholder="Confirm password">
+          <div [hidden]="cp.valid || cp.pristine" class="alert alert-danger">
+            Confirm Password should be same
+          </div>
+          <div *ngIf="cp.touched && cp.errors?.notEqual && cp.errors?.required" class="alert alert-danger">
+            Password Confirm Password does not match
+          </div>
+        </div>
+        <div class="container-login100-form-btn p-tb-20">
+          <button class="login100-form-btn m-r-10" routerLinkActive="active" (click)="register()">
+            Register
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
