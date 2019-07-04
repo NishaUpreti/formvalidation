@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './customcomponent/login/login.component';
 import { RegisterComponent } from './customcomponent/register/register.component';
 import { HeaderComponent } from './customcomponent/header/header.component';
+import { ViewdataComponent } from './customcomponent/viewdata/viewdata.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HeaderComponent
+    HeaderComponent,
+    ViewdataComponent
     // EqualvalidatorDirective
   ],
   imports: [
