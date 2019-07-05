@@ -1,17 +1,21 @@
+<app-register (registerData)="receive($event)"></app-register>
 <table border="1">
-  <thead>
-    <tr>
-      <th>User Name</th>
-      <th>Mobile Number</th>
-      <th>Email</th>
-      <th>Password</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>{{username1}}</td>
-      <td>{{psd1}}</td>
-      <td>{{mobileno1}}</td>
-    </tr>
-  </tbody>
+	<thead>
+		<tr>
+			<th>User Name</th>
+			<th>Mobile Number</th>
+			<th>Email</th>
+			<th>Password</th>
+			<th>Confirm Password</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>{{username1}}</td>
+			<td>{{mobileno1}}</td>
+			<td>{{email1}}</td>
+			<td>{{psd1}}</td>
+			<td>{{cpsd1}}</td>
+		</tr>
+	</tbody>
 </table>
