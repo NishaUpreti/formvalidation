@@ -23,6 +23,9 @@ export class RegisterComponent implements OnInit {
       username1: this.username,
       psd1: this.psd,
       mobileno1: this.mobileno,
+      email1:this.email,
+      pasd1:this.pasd,
+      cpsd1:this.cpsd
 
     }
     this.registerData.emit(reg);
