@@ -9,6 +9,8 @@ export class ViewdataComponent implements OnInit {
   username1: any;
   psd1: any;
   mobileno1: any;
+  email1:any;
+  cpsd1:any;
 
   constructor() { }
 
