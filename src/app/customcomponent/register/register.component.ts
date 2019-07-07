@@ -12,21 +12,25 @@ export class RegisterComponent implements OnInit {
   psd: any;
   mail: string;
   mobileno: any;
+  email: any;
+  pasd: any;
+  cpsd: any;
+  date: any;
   constructor() { }
 
   ngOnInit() {
   }
-  onSubmit() {
+  onSubmit(uform) {
     debugger
     //console.log(userform);
     const reg = {
       username1: this.username,
       psd1: this.psd,
       mobileno1: this.mobileno,
-      email1:this.email,
-      pasd1:this.pasd,
-      cpsd1:this.cpsd
-
+      email1: this.email,
+      pasd1: this.pasd,
+      cpsd1: this.cpsd,
+      date1: this.date
     }
     this.registerData.emit(reg);
   }

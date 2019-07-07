@@ -9,14 +9,15 @@ export class ViewdataComponent implements OnInit {
   username1: any;
   psd1: any;
   mobileno1: any;
-  email1:any;
-  cpsd1:any;
+  email1: any;
+  cpsd1: any;
+  date1: any;
 
   constructor() { }
 
   ngOnInit() {
   }
- receive(e) {
+  receive(e) {
     debugger
     console.log(e);
     this.username1 = e.username1;
@@ -27,7 +28,9 @@ export class ViewdataComponent implements OnInit {
     console.log(this.mobileno1);
     this.email1 = e.email1;
     console.log(this.email1);
-    this.cpsd1=e.cpsd1;
+    this.cpsd1 = e.cpsd1;
     console.log(this.cpsd1);
+    this.date1 = e.date1;
+    console.log(this.date1);
   }
 }

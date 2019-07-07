@@ -6,7 +6,7 @@
           Register
         </span>
       </div>
-      <form class="login100-form validate-form" #userform="ngForm">
+      <form class="login100-form validate-form" #userform="ngForm" (ngSubmit)="onSubmit(userform)">
         <div class="wrap-input100 validate-input m-b-26">
           <div class="form-group">
             <span class="label-input100">Username</span>
@@ -61,6 +61,21 @@
           </div>
         </div>
         <div class="wrap-input100 validate-input m-b-18">
+          <span class="label-input100">DOB</span>
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="date" name="date1"
+              required #datetext="ngModel">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <div *ngIf="datetext.invalid && (datetext.touched || datetext.dirty)" class="text-danger">
+            <div *ngIf="datetext.errors.required">
+              DOB is required
+            </div>
+          </div>
+        </div>
+
+        <div class="wrap-input100 validate-input m-b-18">
           <span class="label-input100">Password</span>
           <input class="input100" type="text" [(ngModel)]="pasd" maxlength="8" name="password1" required #psd="ngModel"
             placeholder="Enter password" pattern="^[a-zA-Z0-9@$%?]{8,}$">
@@ -86,7 +101,7 @@
           </div>
         </div>
         <div class="container-login100-form-btn p-tb-20">
-          <button class="login100-form-btn m-r-10" type="submit" (click)="onSubmit()" routerLinkActive="active">
+          <button class="login100-form-btn m-r-10" type="submit" routerLink="/viewdata" routerLinkActive="active">
             Register
           </button>
         </div>
@@ -94,6 +109,3 @@
     </div>
   </div>
 </div>
-<app-viewdata (registerData)="receive($event)">
-
-</app-viewdata>

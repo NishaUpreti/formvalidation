@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
+import { UserserviceService } from 'src/app/commanservice/userservice.service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,8 @@ export class LoginComponent implements OnInit {
   usernameR: any;
   psdR: any;
   loginform: FormGroup;
-  constructor(private _fb: FormBuilder) {
+  users: any;
+  constructor(private _fb: FormBuilder, private dataservice: UserserviceService) {
     this.createForm();
   }
   createForm() {
@@ -45,6 +47,9 @@ export class LoginComponent implements OnInit {
 
   }
   ngOnInit() {
+    debugger
+    this.users = this.dataservice.getusers();
+    console.log(this.users);
   }
 
 }
